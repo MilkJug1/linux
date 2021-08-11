@@ -171,21 +171,21 @@ static int audit_match_perm(struct audit_context *ctx, int mask)
 		     audit_match_class(AUDIT_CLASS_WRITE, n))
 			return 1;
 		if ((mask & AUDIT_PERM_READ) &&
-		     audit_match_class(AUDIT_CLASS_READ, n))
+		    audit_match_class(AUDIT_CLASS_READ, n))
 			return 1;
 		if ((mask & AUDIT_PERM_ATTR) &&
-		     audit_match_class(AUDIT_CLASS_CHATTR, n))
+		    audit_match_class(AUDIT_CLASS_CHATTR, n))
 			return 1;
 		return 0;
 	case 1: /* 32bit on biarch */
 		if ((mask & AUDIT_PERM_WRITE) &&
-		     audit_match_class(AUDIT_CLASS_WRITE_32, n))
+		    audit_match_class(AUDIT_CLASS_WRITE_32, n))
 			return 1;
 		if ((mask & AUDIT_PERM_READ) &&
-		     audit_match_class(AUDIT_CLASS_READ_32, n))
+		    audit_match_class(AUDIT_CLASS_READ_32, n))
 			return 1;
 		if ((mask & AUDIT_PERM_ATTR) &&
-		     audit_match_class(AUDIT_CLASS_CHATTR_32, n))
+		    audit_match_class(AUDIT_CLASS_CHATTR_32, n))
 			return 1;
 		return 0;
 	case 2: /* open */

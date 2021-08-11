@@ -362,7 +362,7 @@ struct task_struct *__kthread_create_on_node(int (*threadfn)(void *data),
 	DECLARE_COMPLETION_ONSTACK(done);
 	struct task_struct *task;
 	struct kthread_create_info *create = kmalloc(sizeof(*create),
-						     GFP_KERNEL);
+						    GFP_KERNEL);
 
 	if (!create)
 		return ERR_PTR(-ENOMEM);
@@ -412,7 +412,7 @@ struct task_struct *__kthread_create_on_node(int (*threadfn)(void *data),
 		 */
 		sched_setscheduler_nocheck(task, SCHED_NORMAL, &param);
 		set_cpus_allowed_ptr(task,
-				     housekeeping_cpumask(HK_FLAG_KTHREAD));
+				    housekeeping_cpumask(HK_FLAG_KTHREAD));
 	}
 	kfree(create);
 	return task;
@@ -443,8 +443,8 @@ struct task_struct *__kthread_create_on_node(int (*threadfn)(void *data),
  */
 struct task_struct *kthread_create_on_node(int (*threadfn)(void *data),
 					   void *data, int node,
-					   const char namefmt[],
-					   ...)
+					const char namefmt[],
+					...)
 {
 	struct task_struct *task;
 	va_list args;
@@ -515,7 +515,7 @@ struct task_struct *kthread_create_on_cpu(int (*threadfn)(void *data),
 	struct task_struct *p;
 
 	p = kthread_create_on_node(threadfn, data, cpu_to_node(cpu), namefmt,
-				   cpu);
+				cpu);
 	if (IS_ERR(p))
 		return p;
 	kthread_bind(p, cpu);
@@ -869,7 +869,7 @@ EXPORT_SYMBOL(kthread_create_worker);
  */
 struct kthread_worker *
 kthread_create_worker_on_cpu(int cpu, unsigned int flags,
-			     const char namefmt[], ...)
+			    const char namefmt[], ...)
 {
 	struct kthread_worker *worker;
 	va_list args;

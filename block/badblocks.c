@@ -102,7 +102,7 @@ retry:
 		 * any are unacknowledged.
 		 */
 		while (lo >= 0 &&
-		       BB_OFFSET(p[lo]) + BB_LEN(p[lo]) > s) {
+		    BB_OFFSET(p[lo]) + BB_LEN(p[lo]) > s) {
 			if (BB_OFFSET(p[lo]) < target) {
 				/* starts before the end, and finishes after
 				 * the start, so they must overlap

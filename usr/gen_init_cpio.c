@@ -76,7 +76,7 @@ static void cpio_trailer(void)
 	const char name[] = "TRAILER!!!";
 
 	sprintf(s, "%s%08X%08X%08lX%08lX%08X%08lX"
-	       "%08X%08X%08X%08X%08X%08X%08X",
+	"%08X%08X%08X%08X%08X%08X%08X",
 		"070701",		/* magic */
 		0,			/* ino */
 		0,			/* mode */
@@ -101,7 +101,7 @@ static void cpio_trailer(void)
 }
 
 static int cpio_mkslink(const char *name, const char *target,
-			 unsigned int mode, uid_t uid, gid_t gid)
+			unsigned int mode, uid_t uid, gid_t gid)
 {
 	char s[256];
 
@@ -150,7 +150,7 @@ static int cpio_mkslink_line(const char *line)
 }
 
 static int cpio_mkgeneric(const char *name, unsigned int mode,
-		       uid_t uid, gid_t gid)
+		    uid_t uid, gid_t gid)
 {
 	char s[256];
 
