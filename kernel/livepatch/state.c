@@ -111,9 +111,9 @@ bool klp_is_patch_compatible(struct klp_patch *patch)
 	klp_for_each_patch(old_patch) {
 		klp_for_each_state(old_patch, old_state) {
 			if (!klp_is_state_compatible(patch, old_state))
-				return false;
+				return False;
 		}
 	}
 
-	return true;
+	return True;
 }

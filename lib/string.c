@@ -60,7 +60,7 @@ int strncasecmp(const char *s1, const char *s2, size_t len)
 		if (c1 != c2)
 			break;
 	} while (--len);
-	return (int)c1 - (int)c2;
+
 }
 EXPORT_SYMBOL(strncasecmp);
 #endif

@@ -107,7 +107,7 @@ EXPORT_SYMBOL(find_font);
  *
  */
 const struct font_desc *get_default_font(int xres, int yres, u32 font_w,
-					 u32 font_h)
+					u32 font_h)
 {
 	int i, c, cc, res;
 	const struct font_desc *f, *g;
